@@ -1,28 +1,76 @@
-== README
+# Ben Kinney - Ruby on Rails code project
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This readme will serve as a walk-through to my process of building this project.
 
-Things you may want to cover:
+## Project Rubric
 
-* Ruby version
+Here I will discuss the objectives of the project and how I solved for them
 
-* System dependencies
+* User can register and then must be authenticated before logging in.
 
-* Configuration
+  * I too prefer to use Devise for this setup and was glad to see it mentioned in the project directions.  I used only the functions of Devise asked for in the project directions, ignoring the locking, omniauth functionality.
 
-* Database creation
+* Users can create posts (title, body, author)
 
-* Database initialization
+  * Straightforward Ruby on Rails Scaffold. 
 
-* How to run the test suite
+  ````
+  $ rails g scaffold Post title:string body:text user:references
+  ````
 
-* Services (job queues, cache servers, search engines, etc.)
+* Users can comment on other's posts
 
-* Deployment instructions
+  * Same as the Post
 
-* ...
+  ````
+  $ rails g scaffold Comment body:text user:references post:references
+  ````
 
+* The post index page serves as the site root page and shows all posts with title and author's name.
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+  * 
+
+* Posts are order in Ascending order.
+
+  * Set default scope for posts order in the model, post.rb.
+
+* There is a post show page that shows a single post.  Underneath the posts are all the comments for that post, ordered by date (descending order).
+
+  * Set default scope for comments order in the model, comment.rb.
+
+* When commenting on a post the input field position is left up to the developer.
+
+  *
+
+## Project Requirements
+
+* Upload to Github.
+
+* Use latest version of Rails 4
+
+  * I used 4.2.8.  It was the highest version of Rails 4.  I also have experience with Rails 5.
+
+* Use Ruby 2.2 or greater
+
+  * I used 2.2.2
+
+* Rspec unit tests (minimum of 10).
+
+* One feature test (rspec/capybara)
+
+* Use whatever gems required to get the job done
+
+  ###### Gem List
+
+  This is a list of all the gems I added to the Gemfile and why I added them.
+
+  * devise - User authentication
+  * sendgrid - Email service
+  * dotenv-rails - I prefer to use a .env file for environment variables on my local machine.
+  * 
+
+# TO-DO
+* Style email
+* Style Authentication pages
+* Style blog feed
+* Authenticate Admin pages
