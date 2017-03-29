@@ -52,3 +52,7 @@ group :development do
   gem 'spring'
 end
 
+group :development, :production do
+  # Using SendGrid for Emails
+  gem 'sendgrid'
+end
