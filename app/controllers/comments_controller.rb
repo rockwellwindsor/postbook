@@ -1,6 +1,10 @@
+# This class is responsible for the CRUD operations involved with a Comment object
 class CommentsController < ApplicationController
-  before_action :set_comment, only: [:show, :edit, :update, :destroy]
+  # This module is responsible for providing the is_signed_in? method
+  include ApplicationHelper
 
+  before_action :set_comment, only: [:show, :edit, :update, :destroy]
+  before_action :is_signed_in?, only [:new, :edit, :update, :destroy]
   # GET /comments
   # GET /comments.json
   def index

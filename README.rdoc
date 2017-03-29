@@ -73,6 +73,11 @@ Here I will discuss the objectives of the project and how I solved for them
 
 
 # TO-DO
+* Authenticate on the following pages
+  * Posts
+    * new, create, update, destroy
+  * Comments
+    * new, create, update, destroy
 * Style email
 * Style Authentication pages
 * Style blog feed
