@@ -1,7 +1,6 @@
 <section class="form <%= controller.controller_name %>-<%= controller.action_name %>-form">
   <div class="title">
     <h2>Resend confirmation instructions</h2>
-
   </div>
   <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
     <%= devise_error_messages! %>
@@ -14,7 +13,7 @@
       </div>
     </div>
     <div class="form-group actionbuttons">
-      <%= f.submit "Resend confirmation instructions", class: "fillbutton" %>
+      <%= f.submit "Resend confirmation instructions", class: "auth-button" %>
     </div>
   <% end %>
   <div class="form-group buttons">

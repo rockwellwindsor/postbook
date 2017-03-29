@@ -1,11 +1,8 @@
 # This class is responsible for the CRUD operations involved with a Post object
 class PostsController < ApplicationController
-  # This module is responsible for providing the is_signed_in? method
-  include ApplicationHelper
 
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-  before_action :is_signed_in?, only: [:new, :edit, :update, :destroy]
-  
+
   # GET /posts
   # GET /posts.json
   def index

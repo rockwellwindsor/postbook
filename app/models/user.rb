@@ -8,4 +8,5 @@ class User < ActiveRecord::Base
   has_many :comments, dependent: :destroy
 
   # Validations handled by Devise
+  validates :first_name, :last_name, presence: true
 end

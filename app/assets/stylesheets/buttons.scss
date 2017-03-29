@@ -1,0 +1,15 @@
+@import '_colors';
+
+.auth-button {
+  width:100%;
+  margin: 15px 0;
+  padding: 20px 45px;
+  font-size:1em;
+  background: $black;
+  color: $white;
+  border: 1px solid $black;
+  cursor: pointer;
+}
+.auth-button:hover {
+  opacity: 0.5;
+}
