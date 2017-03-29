@@ -32,7 +32,12 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# User Authentication
+gem 'devise'
+
 group :development, :test do
+  # Use .env file // Must come before any of the variables are needed
+  gem 'dotenv-rails'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   # Using RSpec testing framework

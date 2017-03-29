@@ -69,6 +69,9 @@ Here I will discuss the objectives of the project and how I solved for them
   * dotenv-rails - I prefer to use a .env file for environment variables on my local machine.
   * 
 
+## Project Summary
+
+
 # TO-DO
 * Style email
 * Style Authentication pages
