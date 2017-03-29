@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
 
   # Associations
   has_many :posts, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   # Validations handled by Devise
 end
