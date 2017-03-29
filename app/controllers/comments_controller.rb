@@ -4,7 +4,8 @@ class CommentsController < ApplicationController
   include ApplicationHelper
 
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
-  before_action :is_signed_in?, only [:new, :edit, :update, :destroy]
+  before_action :is_signed_in?, only: [:new, :edit, :update, :destroy]
+
   # GET /comments
   # GET /comments.json
   def index
