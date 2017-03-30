@@ -98,5 +98,7 @@ Here I will discuss the objectives of the project and how I solved them.
   * capybara - Interact with the page
   * bootstrap-sass - Use bootstrap
   * breadcrumbs_on_rails - Breadcrumb navigation
+  * faker - Create dummy data for posts
+  * ckeditor - Writing better posts
 
 # TO-DO
