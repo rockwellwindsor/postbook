@@ -10,6 +10,16 @@
   </div>
   <hr>
   <div class="comments-section">
-    <button class="add=comment-button btn">Add a comment</button>
+    <div class="comment-container">
+      <% if @post.comments.any? %>
+        <% @posts.comments.each do | comment | %>
+          <div id="comment-<%= comment.id %>" class="comment">
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    <div id="new-comment-form-for-post-<%= @post.id %>" class="new-comment-form">
+    </div>
+    <button class="add-comment-button" data-post-id="<%= @post.id %>">Add a comment</button>
   </div>
 </div>
