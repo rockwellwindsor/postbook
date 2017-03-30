@@ -4,5 +4,8 @@ class Comment < ActiveRecord::Base
   belongs_to :post
 
   # Validations
-  validates :body, :user_id, presence: true
+  validates :body, :user_id, :post_id, presence: true
+  
+  # Scopes
+  default_scope {order(created_at: :asc)}
 end

@@ -1,6 +1,5 @@
 FactoryGirl.define do
   factory :user do
-    id 3334
     sequence(:first_name)  {|n| "Person"}
     sequence(:last_name) {|n| "#{n}"}
     sequence(:email) {|n| "person_#{n}@example.com"}
@@ -12,5 +11,11 @@ FactoryGirl.define do
     title "Super awesome test post"
     body "Lorem ipsum dolor et..."
     user
+  end
+
+  factory :comment do
+    body "Lorem ipsum dolor et..."
+    user
+    post
   end
 end

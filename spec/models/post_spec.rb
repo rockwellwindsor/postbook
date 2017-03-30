@@ -1,13 +1,13 @@
 require 'rails_helper'
 require 'spec_helper'
 
-# This file is responsible for the tests testing the CRUD operations for the post resource
+# This file is responsible for the tests testing the CRUD operations for the Post resource
 RSpec.describe Post, type: :model do
 
   # Create a post and user
   before do
-    @user = FactoryGirl.build(:user)
-    @post = Post.new(title: "Awesome post of the future", body: "In the future the big thing will be...", user_id: @user.id)
+    @user = User.new(id: rand(1..500), first_name: "New", last_name: "TestUser", email:"email@email.com", password: "password", password_confirmation: "password", confirmed_at: Time.now)
+    @post = Post.new(id: rand(1..500), title: "Awesome post of the future", body: "In the future the big thing will be...", user_id: @user.id)
   end
 
   subject {@post}
@@ -38,6 +38,24 @@ RSpec.describe Post, type: :model do
       user = described_class.reflect_on_association(:user)
       expect(user.macro).to eq :belongs_to
     end
+    #  Testing default scope order
+    describe "comments association" do
+      let!(:older_comment) do
+        FactoryGirl.create(:comment, user: @user, post: @post, created_at: 1.day.ago)
+      end
+      let!(:newer_comment) do
+        FactoryGirl.create(:comment, user: @user, post: @post, created_at: 1.hour.ago)
+      end
+
+      it "should have the right comments in the right order" do
+        @post.comments.should == [older_comment, newer_comment]
+      end
+
+      it "should have the right comments in the right order" do
+        @post.comments.should_not == [newer_comment, older_comment]
+      end
+    end
+
     it "has many comments" do
       comments = described_class.reflect_on_association(:comments)
       expect(comments.macro).to eq :has_many

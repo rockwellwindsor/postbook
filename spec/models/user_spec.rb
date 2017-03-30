@@ -4,8 +4,7 @@ require 'spec_helper'
 RSpec.describe User, type: :model do
 
   before do
-   @user = User.new(first_name: "Example", last_name: "User", email: "user@example.com",
-                    password: "password", password_confirmation: "password")
+   @user = User.new(id: rand(1..500), first_name: "Example", last_name: "User", email: "user@example.com", password: "password", password_confirmation: "password")
   end
 
   subject {@user}
@@ -91,8 +90,8 @@ RSpec.describe User, type: :model do
   end
 
   describe "when password is too short" do
-    before { @user.password = @user.password_confirmation = "a" * 5 }
-    it { should_not be_valid }
+    before {@user.password = @user.password_confirmation = "a" * 5}
+    it {should_not be_valid}
   end
 
   describe "post associations" do 
@@ -109,10 +108,9 @@ RSpec.describe User, type: :model do
     end
 
     it "should delete a users posts when that user is deleted" do
-      user = FactoryGirl.build(:user)
-      post = FactoryGirl.build(:post, user_id: user.id)
-      user.posts << post
-      expect {user.destroy}.to change {Post.count}.by(-1)
+      post = Post.new(id: rand(1..500), title: "Awesome post of the future", body: "In the future the big thing will be...", user_id: @user.id)
+      @user.posts << post
+      expect {@user.destroy}.to change {Post.count}.by(-@user.posts.count)
     end
   end 
 end
