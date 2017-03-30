@@ -1,12 +1,13 @@
-<!-- This method returns the @author_check value as true or false based on if this post belongs to the current user.  Found in models/user.rb -->
+<!-- This method returns the @post_author_check value as true or false based on if this post belongs to the current user.  Found in helpers/post_heler.rb -->
 <% is_my_post?(@post, current_user) %>
+
 <div>
   <div class="post-section">
     <h1 class="post-title"><%= @post.title %></h1>
     <p class="post-author">Author: <%= @post.user.first_name %> <%= @post.user.last_name %></p>
     <p class="post-date">Added to the world on: <%= @post.created_at.strftime("%A %B %d, %Y") %></p>
-    <% if @author_check == true %>
-      <p class="author-links">
+    <% if @post_author_check == true %>
+      <p class="post-author-links">
         <a href="/posts/<%= @post.id %>/edit">
           <i class="fa fa-edit"></i> | 
           <%= link_to 'X', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
@@ -27,12 +28,20 @@
     <div class="comments-container">
       <% if @post.comments.any? %>
         <% @post.comments.each do | comment | %>
+
+          <!-- This method returns the @comment_author_check value as true or false based on if this comment belongs to the current user.  Found in helpers/comment_helper.rb -->
+          <% is_my_comment?(comment, current_user) %>
+
           <div id="comment-<%= comment.id %>" class="comment">
             <p class="comment-author">
               <%= comment.user.first_name %> <%= comment.user.last_name %> says:
             </p>
             <p class="comment-body">
               <%= sanitize(comment.body) %>
+            </p>
+            <p class="comment-author-links">
+              <i class="fa fa-edit"></i> | 
+              <%= link_to 'X', comment, data: { confirm: 'Are you sure?' }, 'data-comment-id' => comment.id, class: 'delete-comment' %>
             </p>
           </div>
         <% end %>

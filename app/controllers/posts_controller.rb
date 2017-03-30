@@ -24,6 +24,7 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
+    add_breadcrumb "Back", "/posts/#{@post.id}"
   end
 
   # POST /posts

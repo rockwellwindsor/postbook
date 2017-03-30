@@ -36,8 +36,24 @@
   .post-body {
     font-size: 1.7em;
   }
-  .author-links {
+  .post-author-links {
     text-align: center;
+    a {
+      color: $black;
+    }
+    a:hover {
+      text-decoration: none !important;
+      color: $blue;
+    }
+    fa {
+      color: $black;      
+    }
+    fa:hover {
+      text-decoration: none !important;
+      color: $blue;
+    }
+  }
+  .comment-author-links {
     a {
       color: $black;
     }
