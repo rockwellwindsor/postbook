@@ -10,6 +10,7 @@ This readme will serve as a walk-through to my process of building this project 
     *  I pushed to git from the very beginning of this application so you could get a sense of my git patterns.  Probably a little overkill but I tend to do small pushes more often instead of large pushes less often.
     *  Not sure if you guys use a git message template but you can see mine on my commit messages.
     * I focused on TDD for this onc eI got into the post and comments create section.  When setting up devise I ususally focus on all that first because the tests are written and can be included.
+    * I use postgresql even in loca development so if you download and run make sure to move the pg gem into a production block and add splite3 and then change the database.yml file.
 
 ## Project Rubric
 
@@ -96,10 +97,6 @@ Here I will discuss the objectives of the project and how I solved them.
   * factory_girl_rails - Set up factories
   * capybara - Interact with the page
   * bootstrap-sass - Use bootstrap
+  * breadcrumbs_on_rails - Breadcrumb navigation
 
 # TO-DO
-* TDD on posts - 
-* Style emails - DONE
-* Style Authentication pages - DONE
-* Style blog feed - 
-* Authenticate Admin pages - DONE

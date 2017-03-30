@@ -37,6 +37,11 @@ gem 'bootstrap-sass'
 
 # User Authentication
 gem 'devise'
+# Editor
+gem 'ckeditor', '4.1.3'
+gem 'paperclip'
+# Breadcrumb navigation
+gem "breadcrumbs_on_rails"
 
 group :development, :test do
   # Use .env file // Must come before any of the variables are needed

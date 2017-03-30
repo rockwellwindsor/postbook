@@ -8,7 +8,7 @@ RSpec.describe User, type: :model do
                     password: "password", password_confirmation: "password")
   end
 
-  subject { @user }
+  subject {@user}
 
   it {should respond_to(:first_name)}
   it {should respond_to(:last_name)}

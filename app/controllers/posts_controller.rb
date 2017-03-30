@@ -3,7 +3,8 @@ class PostsController < ApplicationController
 
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
-  
+  before_action :add_breadcrumbs
+
   # GET /posts
   # GET /posts.json
   def index
@@ -29,7 +30,6 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = current_user.posts.build(post_params)
-
     respond_to do |format|
       if @post.save
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
@@ -69,6 +69,14 @@ class PostsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_post
       @post = Post.find(params[:id])
+    end
+
+    # Add the needed breadcrumb navigation
+    def add_breadcrumbs
+      add_breadcrumb "Home", :root_path
+      if user_signed_in?
+        add_breadcrumb "New", new_post_path
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

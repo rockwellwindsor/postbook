@@ -1,0 +1,17 @@
+/*
+*
+* This file is responsible for the styles found on site wide elements.
+* 
+*/
+@import '_colors';
+
+.breadcrumbs {
+  a {
+    font-size: 25px;
+    color: $black;
+  }
+  a:hover {
+    color: $blue;
+    text-decoration: none;
+  }
+}

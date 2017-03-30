@@ -15,15 +15,11 @@
     <%= f.label :title %><br>
     <%= f.text_field :title %>
   </div>
-  <div class="field">
+  <div class="field body-field">
     <%= f.label :body %><br>
-    <%= f.text_area :body %>
-  </div>
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
+    <%= f.cktext_area :body %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Create post", class: "post-create-button" %>
   </div>
 <% end %>

@@ -1,31 +1,11 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Posts</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Body</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.title %></td>
-        <td><%= post.body %></td>
-        <td><%= post.user %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Post', new_post_path %>
+<% if @posts.any? %>
+  <% @posts.each do |post| %>
+    <a class="post-link" href="/posts/<%= post.id %>">
+      <div class="col-xs-12">
+      <h1><%= post.title %></h1>
+      <p><%= post.user.first_name %> <%= post.user.last_name %></p>
+      <hr>
+      </div>
+    </a>
+  <% end %>
+<% end %>
