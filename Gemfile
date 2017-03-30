@@ -45,6 +45,12 @@ group :development, :test do
   gem 'byebug'
   # Using RSpec testing framework
   gem 'rspec-rails'
+  # Factory girl rails gem
+  gem 'factory_girl_rails'
+  # Capybara
+  gem "capybara"
+  # Clean out the test database
+  gem "database_cleaner"
 end
 
 group :development do
