@@ -10,16 +10,22 @@
   </div>
   <hr>
   <div class="comments-section">
-    <div class="comment-container">
+    <div class="comments-container">
       <% if @post.comments.any? %>
-        <% @posts.comments.each do | comment | %>
+        <% @post.comments.each do | comment | %>
           <div id="comment-<%= comment.id %>" class="comment">
+            <p class="comment-author">
+              <%= comment.user.first_name %> <%= comment.user.last_name %> says:
+            </p>
+            <p class="comment-body">
+              <%= sanitize(comment.body) %>
+            </p>
           </div>
         <% end %>
       <% end %>
     </div>
+    <button class="add-comment-button" data-post-id="<%= @post.id %>">Add a comment</button>
     <div id="new-comment-form-for-post-<%= @post.id %>" class="new-comment-form">
     </div>
-    <button class="add-comment-button" data-post-id="<%= @post.id %>">Add a comment</button>
   </div>
 </div>
