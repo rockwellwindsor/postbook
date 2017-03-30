@@ -15,7 +15,7 @@ $(document).on('click', '.create-comment-button', function() {
     dataType: 'script',
     data: { comment : {body: body, post_id : post}},
     success: function() {
-      alert('Boom');
+      location.reload();
     }
   });
 });
