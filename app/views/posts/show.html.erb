@@ -24,8 +24,10 @@
         <% end %>
       <% end %>
     </div>
-    <button class="add-comment-button" data-post-id="<%= @post.id %>">Add a comment</button>
-    <div id="new-comment-form-for-post-<%= @post.id %>" class="new-comment-form">
-    </div>
+    <% if user_signed_in? %>
+      <button class="add-comment-button" data-post-id="<%= @post.id %>">Add a comment</button>
+      <div id="new-comment-form-for-post-<%= @post.id %>" class="new-comment-form">
+      </div>
+    <% end %>
   </div>
 </div>
