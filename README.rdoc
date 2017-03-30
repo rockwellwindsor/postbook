@@ -7,9 +7,8 @@ This readme will serve as a walk-through to my process of building this project 
   Build an application based on the rubric provided.  There should be posts that can have comments and users that have to be authenticated before creating posts or comments.  
 
   * A few points to look for
-    *  I pushed to git from the very beginning of this application so you could get a sense of my git patterns.  Probably a little overkill but I tend to do small pushes more often instead of large pushes less often.
-    *  Not sure if you guys use a git message template but you can see mine on my commit messages.
-    * I focused on TDD for this onc eI got into the post and comments create section.  When setting up devise I ususally focus on all that first because the tests are written and can be included.
+    * I pushed to git from the very beginning of this application so you could get a sense of my git patterns.  Probably a little overkill but I tend to do small pushes more often instead of large pushes less often.
+    * Not sure if you guys use a git message template but you can see mine on my commit messages.
     * I use postgresql even in loca development so if you download and run make sure to move the pg gem into a production block and add splite3 and then change the database.yml file.
 
 ## Project Rubric
@@ -22,7 +21,7 @@ Here I will discuss the objectives of the project and how I solved them.
 
 * Users can create posts (title, body, author)
 
-  * Straightforward Ruby on Rails Scaffold. 
+  * Straightforward Ruby on Rails Scaffold to generate posts. 
 
   ````
   $ rails g scaffold Post title:string body:text user:references
@@ -30,7 +29,7 @@ Here I will discuss the objectives of the project and how I solved them.
 
 * Users can comment on other's posts
 
-  * Same as the Post
+  * Same as the Post.
 
   ````
   $ rails g scaffold Comment body:text user:references post:references
@@ -40,7 +39,7 @@ Here I will discuss the objectives of the project and how I solved them.
 
   * 
 
-* Posts are order in Ascending order.
+* Posts are ordered from new to old.
 
   * Set default scope for posts order in the model, post.rb.
 
@@ -50,7 +49,7 @@ Here I will discuss the objectives of the project and how I solved them.
 
 * When commenting on a post the input field position is left up to the developer.
 
-  *
+  *  I just AJAX the form in at the bottom of the list so the comment appears where the button is.  I do have to admit that ordering the comments with oldest at the top provided a little bump in development.  Typically I would not want the button to be at the bottom of the list, but I would also order comments newest to oldest just like the posts. I fixed what could be a UX issue (if there where a lot of comments it would hide the button) by keeping the button up top but scrolling to the newly posted comment at the bottom of the list.
 
 ## Project Requirements
 
@@ -100,5 +99,8 @@ Here I will discuss the objectives of the project and how I solved them.
   * breadcrumbs_on_rails - Breadcrumb navigation
   * faker - Create dummy data for posts
   * ckeditor - Writing better posts
+  * font-awesome - Because it's awesome
 
 # TO-DO
+
+* If post/comment bleong to user then show edit icons

@@ -3,16 +3,8 @@ require 'rails_helper'
 RSpec.describe "posts/index", type: :view do
   before(:each) do
     assign(:posts, [
-      Post.create!(
-        :title => "Title",
-        :body => "MyText",
-        :user => nil
-      ),
-      Post.create!(
-        :title => "Title",
-        :body => "MyText",
-        :user => nil
-      )
+      @post_1 = FactoryGirl.create(:post),
+      @post_2 = FactoryGirl.create(:post)   
     ])
   end
 

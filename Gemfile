@@ -42,6 +42,8 @@ gem 'ckeditor', '4.1.3'
 gem 'paperclip'
 # Breadcrumb navigation
 gem "breadcrumbs_on_rails"
+# Font awesome
+gem 'font-awesome-rails'
 
 group :development, :test do
   # Use .env file // Must come before any of the variables are needed

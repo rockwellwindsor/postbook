@@ -1,6 +1,7 @@
 @import '_colors';
 
-.posts-new {
+/* Add create here because that action is called if the form submit fails */
+.posts-new, .posts-create, .posts-edit {
   padding: 100px 100px;
   label {
     color: #777;
@@ -35,13 +36,38 @@
   .post-body {
     font-size: 1.7em;
   }
+  .author-links {
+    text-align: center;
+    a {
+      color: $black;
+    }
+    a:hover {
+      text-decoration: none !important;
+      color: $blue;
+    }
+    fa {
+      color: $black;      
+    }
+    fa:hover {
+      text-decoration: none !important;
+      color: $blue;
+    }
+  }
 }
 .posts-index {
   padding: 100px 100px;
   .post-link {
     color: #000;
   }
+  .post-title {
+    font-size: 3em;
+  }
   .post-link:hover {
     color: $blue;
+  }
+  .post-author {
+    font-size: 2em
+  }
+  .post-date {
   }
 }

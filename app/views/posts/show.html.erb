@@ -1,8 +1,18 @@
+<!-- This method returns the @author_check value as true or false based on if this post belongs to the current user.  Found in models/user.rb -->
+<% is_my_post?(@post, current_user) %>
 <div>
   <div class="post-section">
     <h1 class="post-title"><%= @post.title %></h1>
     <p class="post-author">Author: <%= @post.user.first_name %> <%= @post.user.last_name %></p>
     <p class="post-date">Added to the world on: <%= @post.created_at.strftime("%A %B %d, %Y") %></p>
+    <% if @author_check == true %>
+      <p class="author-links">
+        <a href="/posts/<%= @post.id %>/edit">
+          <i class="fa fa-edit"></i> | 
+          <%= link_to 'X', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </a>
+      </p>
+    <% end %>
     <hr>
     <div class="post-body">
       <%= sanitize(@post.body) %>
@@ -10,6 +20,10 @@
   </div>
   <hr>
   <div class="comments-section">
+    <div>
+      <button class="go-to-comment-div add-comment-button" data-post-id="<%= @post.id %>">Add a comment</button>
+    </div>
+    <div class="clearfix"></div>
     <div class="comments-container">
       <% if @post.comments.any? %>
         <% @post.comments.each do | comment | %>
@@ -24,10 +38,10 @@
         <% end %>
       <% end %>
     </div>
-    <% if user_signed_in? %>
-      <button class="add-comment-button" data-post-id="<%= @post.id %>">Add a comment</button>
-      <div id="new-comment-form-for-post-<%= @post.id %>" class="new-comment-form">
-      </div>
-    <% end %>
   </div>
+  <% if user_signed_in? %>
+    <div id="add-comment-div">
+      <div id="new-comment-form-for-post-<%= @post.id %>" class="new-comment-form"></div>
+    </div>
+  <% end %>
 </div>

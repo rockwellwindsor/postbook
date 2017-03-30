@@ -2,8 +2,16 @@
   <% @posts.each do |post| %>
     <a class="post-link" href="/posts/<%= post.id %>">
       <div class="col-xs-12">
-      <h1><%= post.title %></h1>
-      <p><%= post.user.first_name %> <%= post.user.last_name %></p>
+      <h1 class="post-title"><%= post.title %></h1>
+      <p class="post-author">Author: <%= post.user.first_name %> <%= post.user.last_name %></p>
+      <p class="post-date">Posted on: <%= post.created_at.strftime("%A %B %d, %Y") %></p>
+      <% if post.comments.any? %>
+        <% if post.comments.count == 1 %>
+          <p><%= post.comments.count %> comment</p>
+        <% else %>
+          <p><%= post.comments.count %> comments</p>
+        <% end %>
+      <% end %>
       <hr>
       </div>
     </a>

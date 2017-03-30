@@ -71,14 +71,6 @@ class PostsController < ApplicationController
       @post = Post.find(params[:id])
     end
 
-    # Add the needed breadcrumb navigation
-    def add_breadcrumbs
-      add_breadcrumb "Home", :root_path
-      if user_signed_in?
-        add_breadcrumb "New", new_post_path
-      end
-    end
-
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
       params.require(:post).permit(:title, :body, :user_id)

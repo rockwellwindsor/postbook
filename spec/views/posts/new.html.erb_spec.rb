@@ -2,11 +2,8 @@ require 'rails_helper'
 
 RSpec.describe "posts/new", type: :view do
   before(:each) do
-    assign(:post, Post.new(
-      :title => "MyString",
-      :body => "MyText",
-      :user => nil
-    ))
+    @user = FactoryGirl.create(:user)
+    @post = FactoryGirl.create(:post)
   end
 
   it "renders new post form" do
