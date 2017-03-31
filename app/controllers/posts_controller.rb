@@ -7,7 +7,8 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
   before_action :add_breadcrumbs
   before_action :is_post_author?, only: [:edit, :update, :destroy]
-  
+  before_action :set_s3_direct_post, only: [:new, :edit, :create, :update]
+
   # GET /posts
   # GET /posts.json
   def index
@@ -75,6 +76,10 @@ class PostsController < ApplicationController
       @post = Post.find(params[:id])
     end
 
+    def set_s3_direct_post
+      @s3_direct_post = S3_BUCKET.presigned_post(key: "uploads/#{SecureRandom.uuid}/${filename}", success_action_status: '201', acl: 'public-read')
+    end
+    
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
       params.require(:post).permit(:title, :body, :user_id)
