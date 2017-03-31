@@ -46,6 +46,8 @@ gem "breadcrumbs_on_rails"
 gem 'font-awesome-rails'
 # Pagination
 gem 'will_paginate-bootstrap'
+# AWS setup for asset uploads
+gem 'aws-sdk', '~> 2.3'
 
 group :development, :test do
   # Use .env file // Must come before any of the variables are needed
