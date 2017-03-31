@@ -5,13 +5,16 @@
   margin: 15px 0;
   padding: 20px 45px;
   font-size:1em;
-  background: $black;
+  background: $blue;
   color: $white;
-  border: 1px solid $black;
+  border: 1px solid $blue;
   cursor: pointer;
 }
 .auth-button:hover {
   opacity: 0.5;
+}
+.auth-button:focus {
+  outline: none;
 }
 .post-create-button {
   width: 100%;

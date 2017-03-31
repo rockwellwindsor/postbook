@@ -38,7 +38,7 @@
       h2 {
         margin: 0;
         display: inline-block;
-        color: $greyblue;
+        color: $blue;
         font-size: 2.5em;
         font-weight: 400;
         letter-spacing: 0.06em;
@@ -112,9 +112,11 @@
       input.input:focus ~ label.loglabel, input.input:valid ~ label.loglabel, label.loglabel.has-value {
         top: -15px;
         font-size: 14px;
-        color: $darknavy;
+        color: $blue;
       }
-
+      em {
+        color: $blue;
+      }
       /* BOTTOM BARS ================================= */
       .bar {
         width:100%;
@@ -127,7 +129,7 @@
         width: 0;
         position: absolute;
         bottom: 0px;
-        background: $darknavy;
+        background: $blue;
         transition: 0.2s ease all;
       }
       .bar:before {
@@ -238,7 +240,7 @@
       h2 {
         margin: 0;
         display: inline-block;
-        color: $greyblue;
+        color: $blue;
         font-size: 2.5em;
         font-weight: 400;
         letter-spacing: 0.06em;
@@ -312,7 +314,7 @@
       input.input:focus ~ label.loglabel, input.input:valid ~ label.loglabel, label.loglabel.has-value {
         top: -15px;
         font-size: 14px;
-        color: $darknavy;
+        color: $blue;
       }
 
       /* BOTTOM BARS ================================= */
@@ -327,7 +329,7 @@
         width: 0;
         position: absolute;
         bottom: 0px;
-        background: $darknavy;
+        background: $blue;
         transition: 0.2s ease all;
       }
       .bar:before {
