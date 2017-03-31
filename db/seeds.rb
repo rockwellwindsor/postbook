@@ -21,5 +21,5 @@ end
   title = Faker::Book.title
   body = Faker::ChuckNorris.fact
   user = rand(1...35)
-  Post.create!(title: title, body: body, user_id: user.id)
+  Post.create!(title: title, body: body, user_id: user)
 end
