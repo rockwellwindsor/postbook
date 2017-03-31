@@ -42,10 +42,14 @@
               <%= sanitize(comment.body) %>
             </p>
             <p id="comment-edit-div-for-comment-<%= comment.id %>" class="edit-comment-container"></p><!-- place AJAX edit form here, hide body above. -->
-            <p class="comment-author-links">
-              <i class="fa fa-edit edit-comment-link" data-post-id="<%= @post.id %>" data-comment-id="<%= comment.id %>"></i> | 
-              <%= link_to 'X', comment, data: { confirm: 'Are you sure?' }, 'data-comment-id' => comment.id, class: 'delete-comment' %>
-            </p>
+            <% if user_signed_in? %>
+              <% if @comment_author_check == true %>
+                <p class="comment-author-links">
+                  <i class="fa fa-edit edit-comment-link" data-post-id="<%= @post.id %>" data-comment-id="<%= comment.id %>"></i> | 
+                  <%= link_to 'X', comment, data: { confirm: 'Are you sure?' }, 'data-comment-id' => comment.id, class: 'delete-comment' %>
+                </p>
+              <% end %>
+            <% end %>
           </div><!-- End comment -->
         <% end %>
       <% end %>

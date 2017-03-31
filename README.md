@@ -9,7 +9,7 @@ This readme will serve as a walk-through to my process of building this project 
   * A few points to look for
     * I pushed to git from the very beginning of this application so you could get a sense of my git patterns.  Probably a little overkill but I tend to do small pushes more often instead of large pushes less often.
     * Not sure if you guys use a git message template but you can see mine on my commit messages.
-    * I use postgresql even in loca development so if you download and run make sure to move the pg gem into a production block and add splite3 and then change the database.yml file.
+    * I use postgresql even in local development so if you download and run make sure to move the pg gem into a production block and add splite3 and then change the database.yml file (unless you use pg locally as well).
 
   * Heroku: https://rocky-tor-88366.herokuapp.com
 
@@ -55,7 +55,7 @@ Here I will discuss the objectives of the project and how I solved them.
 
 * Upload to Github.
 
-  * You're lokking at it. The Heroku URL is: https://rocky-tor-88366.herokuapp.com
+  * You're looking at it. The Heroku URL is: https://rocky-tor-88366.herokuapp.com
 
 * Use latest version of Rails 4
 
