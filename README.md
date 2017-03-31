@@ -8,8 +8,12 @@ This readme will serve as a walk-through to my process of building this project 
 
   * A few points to look for
     * I pushed to git from the very beginning of this application so you could get a sense of my git patterns.  Probably a little overkill but I tend to do small pushes more often instead of large pushes less often.
+
     * Not sure if you guys use a git message template but you can see mine on my commit messages.
+
     * I use postgresql even in local development so if you download and run make sure to move the pg gem into a production block and add splite3 and then change the database.yml file (unless you use pg locally as well).
+
+    * There is some dummy data up on Heroku so feel free to create posts, try to break whatever you can, etc.  
 
   * Heroku: https://rocky-tor-88366.herokuapp.com
 
@@ -49,7 +53,7 @@ Here I will discuss the objectives of the project and how I solved them.
 
 * When commenting on a post the input field position is left up to the developer.
 
-  *  I just AJAX the form in at the bottom of the list so the comment appears where the button is.  I do have to admit that ordering the comments with oldest at the top provided a little bump in development.  Typically I would not want the button to be at the bottom of the list, but I would also order comments newest to oldest just like the posts. I fixed what could be a UX issue (if there where a lot of comments it would hide the button) by keeping the button up top but scrolling to the newly posted comment at the bottom of the list.
+  *  I just AJAX the form in at the bottom of the list so the comment appears where the button is.  I do have to admit that ordering the comments with oldest at the top provided a little bump in development.  Typically I would not want the button to be at the bottom of the list, but I would also order comments newest to oldest just like the posts. I fixed what could be a UX issue (if there where a lot of comments it would hide the button) by keeping the button up top but scrolling to the newly posted comment at the bottom of the list before revealing the form.
 
 ## Project Requirements
 
@@ -91,3 +95,10 @@ Here I will discuss the objectives of the project and how I solved them.
   * ckeditor - Writing better posts
   * font-awesome - Because it's awesome
   * will_paginate-bootstrap - Post pagination
+
+## Summary
+
+Hope you guys enjoy the interesting posts, look forward to talking again.
+
+Thanks,<br/>
+Rockwell Windsor Rice
