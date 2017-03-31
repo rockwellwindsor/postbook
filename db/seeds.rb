@@ -17,9 +17,9 @@
 # end
 
 # Generate some fake posts
-75.times do 
-  title = Faker::Book.title
-  body = Faker::ChuckNorris.fact
-  user = rand(1...35)
-  Post.create!(title: title, body: body, user_id: user)
-end
+# 75.times do 
+#   title = Faker::Book.title
+#   body = Faker::ChuckNorris.fact
+#   user = rand(1...35)
+#   Post.create!(title: title, body: body, user_id: user)
+# end
