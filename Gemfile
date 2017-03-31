@@ -44,6 +44,8 @@ gem 'paperclip'
 gem "breadcrumbs_on_rails"
 # Font awesome
 gem 'font-awesome-rails'
+# Pagination
+gem 'will_paginate-bootstrap'
 
 group :development, :test do
   # Use .env file // Must come before any of the variables are needed
