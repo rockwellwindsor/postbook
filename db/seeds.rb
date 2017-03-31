@@ -16,9 +16,16 @@
 end
 
 # Generate some fake posts
-75.times do 
+15.times do 
   title = Faker::Book.title
   body = Faker::ChuckNorris.fact
-  user = User.find(1...15)
+  user = User.first
+  Post.create!(title: title, body: body, user_id: user.id)
+end
+
+15.times do 
+  title = Faker::Book.title
+  body = Faker::ChuckNorris.fact
+  user = User.last
   Post.create!(title: title, body: body, user_id: user.id)
 end
