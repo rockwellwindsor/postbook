@@ -20,6 +20,6 @@ end
 75.times do 
   title = Faker::Book.title
   body = Faker::ChuckNorris.fact
-  user = User.find(1...35)
+  user = rand(1...35)
   Post.create!(title: title, body: body, user_id: user.id)
 end
