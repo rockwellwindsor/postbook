@@ -1,5 +1,5 @@
 <!-- This method returns the @post_author_check value as true or false based on if this post belongs to the current user.  Found in helpers/post_heler.rb -->
-<% is_my_post?(@post, current_user) %>
+<% is_my_post?(@post) %>
 
 <div>
   <div class="post-section">
@@ -21,16 +21,18 @@
   </div>
   <hr>
   <div class="comments-section">
-    <div>
-      <button class="go-to-comment-div add-comment-button" data-post-id="<%= @post.id %>">Add a comment</button>
-    </div>
+    <% if user_signed_in? %>
+      <div>
+        <button class="go-to-comment-div add-comment-button" data-post-id="<%= @post.id %>">Add a comment</button>
+      </div>
+    <% end %>
     <div class="clearfix"></div>
     <div class="comments-container">
       <% if @post.comments.any? %>
         <% @post.comments.each do | comment | %>
 
           <!-- This method returns the @comment_author_check value as true or false based on if this comment belongs to the current user.  Found in helpers/comment_helper.rb -->
-          <% is_my_comment?(comment, current_user) %>
+          <% is_my_comment?(comment) %>
 
           <div id="comment-<%= comment.id %>" class="comment">
             <p class="comment-author">
@@ -39,11 +41,12 @@
             <p id="comment-body-<%= comment.id %>" class="comment-body">
               <%= sanitize(comment.body) %>
             </p>
+            <p id="comment-edit-div-for-comment-<%= comment.id %>" class="edit-comment-container"></p><!-- place AJAX edit form here, hide body above. -->
             <p class="comment-author-links">
-              <i class="fa fa-edit edit-comment-link" data-comment-id="<%= comment.id %>"></i> | 
+              <i class="fa fa-edit edit-comment-link" data-post-id="<%= @post.id %>" data-comment-id="<%= comment.id %>"></i> | 
               <%= link_to 'X', comment, data: { confirm: 'Are you sure?' }, 'data-comment-id' => comment.id, class: 'delete-comment' %>
             </p>
-          </div>
+          </div><!-- End comment -->
         <% end %>
       <% end %>
     </div>

@@ -1,11 +1,11 @@
 FactoryGirl.define do
   factory :user do
-    sequence(:id) {|n| "#{n}"}
     sequence(:first_name)  {|n| "Person"}
     sequence(:last_name) {|n| "#{n}"}
     sequence(:email) {|n| "person_#{n}@example.com"}
     password "password"
     password_confirmation "password"
+    encrypted_password User.new.send(:password_digest, 'password')
   end
 
   factory :post do

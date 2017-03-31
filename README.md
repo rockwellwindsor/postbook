@@ -65,17 +65,7 @@ Here I will discuss the objectives of the project and how I solved them.
 
 * Rspec unit tests (minimum of 10).
 
-  ###### Since Rspec generates some test automatically I am writing out the location of the first 10 I added so you can zero in easily.
-  *
-  *
-  *
-  *
-  *
-  *
-  *
-  *
-  *
-  *
+  *  I flagged the test I wrote so you can do a directory search for them.  These are test outside of the normal templates that Rspec generates.  Search for ROCKWELL_SUBMISSION_TEST
 
 * One feature test (rspec/capybara)
 

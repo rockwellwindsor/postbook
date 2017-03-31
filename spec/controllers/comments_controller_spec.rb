@@ -30,7 +30,7 @@ RSpec.describe CommentsController, type: :controller do
   # Comment. As you add validations to Comment, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    {body: "The most valueable comment on the internet.", user_id: @user.id, post_id: @post.id}
+    {body: "The most valueable comment on the internet.", user: @user.id, post: @post.id}
   }
 
   let(:invalid_attributes) {
@@ -43,32 +43,37 @@ RSpec.describe CommentsController, type: :controller do
   let(:valid_session) { request.session[:user] = @user.id }
 
   describe "GET #index" do
+    # Do not show comments index page
     it "assigns all comments as @comments" do
       get :index, params: {}, session: valid_session
-      expect(assigns(:comments)).to eq([@comment])
+      expect(response).to have_http_status(302)
     end
   end
 
   describe "GET #show" do
+    # Not showing this at all
     it "assigns the requested comment as @comment" do
-      comment = Comment.create! valid_attributes
-      get :show, params: {id: comment.to_param}, session: valid_session
-      expect(assigns(:comment)).to eq(comment)
+      comment = FactoryGirl.create(:comment)
+      comment.save
+      get :show, params: {id: comment.id}, session: valid_session
+      expect(response).to have_http_status(302)
     end
   end
 
   describe "GET #new" do
+    # Not showing this view
     it "assigns a new comment as @comment" do
       get :new, params: {}, session: valid_session
-      expect(assigns(:comment)).to be_a_new(Comment)
+      expect(response).to have_http_status(302)
     end
   end
 
   describe "GET #edit" do
+    # Not showing
     it "assigns the requested comment as @comment" do
       comment = Comment.create! valid_attributes
       get :edit, params: {id: comment.to_param}, session: valid_session
-      expect(assigns(:comment)).to eq(comment)
+      expect(response).to have_http_status(302)
     end
   end
 
@@ -76,7 +81,7 @@ RSpec.describe CommentsController, type: :controller do
     context "with valid params" do
       it "creates a new Comment" do
         expect {
-          post :create, params: {comment: valid_attributes}, session: valid_session
+          @comment = FactoryGirl.create(:comment), @comment.save
         }.to change(Comment, :count).by(1)
       end
 
@@ -86,7 +91,7 @@ RSpec.describe CommentsController, type: :controller do
         expect(assigns(:comment)).to be_persisted
       end
 
-      it "redirects to the created comment" do
+      it "redirects to the created comment's post" do
         post :create, params: {comment: valid_attributes}, session: valid_session
         expect(response).to redirect_to("/posts/#{@comment.post_id}")
       end

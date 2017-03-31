@@ -6,6 +6,7 @@
   max-width: 100%; 
   border: 1px solid #777777;
   padding: 10px;
+  font-size:1.5em;
 }
 .comment-body-field:focus {
   outline: none;
@@ -21,9 +22,23 @@
     color: $darkgrey;
     font-size: 1.5em;
     padding: 0 50px;
-    .comment-body-field-edit {
-      width: 95%;
-      padding: 10px;
+  }
+  .comment-body-field-edit {
+    margin-left:5%;
+    width: 95%;
+    max-width: 100%; 
+    border: 1px solid #777777;
+    padding: 10px;
+    font-size:1.5em;
+  }
+}
+#comment_error_explanation {
+  display: none;
+  h2 {
+    text-align: center;
+    font-size: 1.2em;
+    .comment-error {
+      color: #ff0000;
     }
   }
 }

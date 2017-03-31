@@ -82,3 +82,8 @@
 .save-comment-edit-dismiss-button:hover {
   opacity: 0.5;
 }
+/* Keep at bottom */
+.disabled-btn {
+  background: $lightgrey;
+  border: 1px solid $lightgrey;
+}

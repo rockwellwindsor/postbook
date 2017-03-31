@@ -1,18 +1,24 @@
-<%= form_for(@comment) do |f| %>
-  <% if @comment.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
-      <ul>
-      <% @comment.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<div class="new-comment-container">
+  <%= form_for(@comment) do |f| %>
+    <% if @comment.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
+        <ul>
+        <% @comment.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div id="comment_error_explanation">
+      <h2>1 error prohibited this comment from being saved: <span class="comment-error">Please add some text</span></h2>
+    </div>
+    <div class="field">
+      <%= f.text_field :body, class: "comment-body-field", placeholder: "Enter your comment here." %>
     </div>
   <% end %>
-  <div class="field">
-    <%= f.text_area :body, class: "comment-body-field", placeholder: "Enter your comment here." %>
+  <div class="actions">
+    <button class="create-comment-button disabled-btn" disabled>Save</button>
   </div>
-<% end %>
-<div class="actions">
-  <button class="create-comment-button">Save</button>
+  <div class="clearfix"></div>
 </div>

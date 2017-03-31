@@ -11,6 +11,7 @@ class CommentsController < ApplicationController
   # GET /comments
   # GET /comments.json
   def index
+    redirect_to root_path
     @comments = Comment.all
   end
 

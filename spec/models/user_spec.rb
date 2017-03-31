@@ -6,43 +6,41 @@ RSpec.describe User, type: :model do
   before do
    @user = User.new(id: rand(1..500), first_name: "Example", last_name: "User", email: "user@example.com", password: "password", password_confirmation: "password")
   end
-
+  # ROCKWELL_SUBMISSION_TEST
   subject {@user}
-
   it {should respond_to(:first_name)}
   it {should respond_to(:last_name)}
   it {should respond_to(:email)}
   it {should respond_to(:password)}
   it {should respond_to(:password_confirmation)}
   it {should respond_to(:posts)}
-
   it {should be_valid}
-
+  # ROCKWELL_SUBMISSION_TEST
   describe "when first name is not present" do
     before {@user.first_name = " "}
     it {should_not be_valid}
   end
-
+  # ROCKWELL_SUBMISSION_TEST
   describe "when last name is not present" do
     before {@user.last_name = " "}
     it {should_not be_valid}
   end
-
+  # ROCKWELL_SUBMISSION_TEST
   describe "when email is not present" do
     before {@user.email = " "}
     it {should_not be_valid}
   end
-
+  # ROCKWELL_SUBMISSION_TEST
   describe "when first name is too long" do
     before {@user.first_name = "a" * 31}
     it {should_not be_valid}
   end
-
+  # ROCKWELL_SUBMISSION_TEST
   describe "when last name is too long" do
     before {@user.last_name = "a" * 31}
     it {should_not be_valid}
   end
-
+  # ROCKWELL_SUBMISSION_TEST
   describe "when email format is invalid" do
     it "should be invalid" do
       addresses = %w[user@foo,com user_at_foo.org example.user@foo.

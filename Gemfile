@@ -60,6 +60,9 @@ group :development, :test do
   gem "capybara"
   # Clean out the test database
   gem "database_cleaner"
+  # WebDriver is a tool for writing automated tests of websites
+  gem 'selenium-webdriver', '2.53.4'
+  gem 'poltergeist'
 end
 
 group :development do

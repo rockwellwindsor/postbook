@@ -20,15 +20,22 @@ require 'rails_helper'
 
 RSpec.describe PostsController, type: :controller do
 
+  # Create a post and user
+  before do
+    @user = FactoryGirl.create(:user)
+    @post = FactoryGirl.create(:post)
+    @comment = FactoryGirl.create(:comment)
+  end
+
   # This should return the minimal set of attributes required to create a valid
   # Post. As you add validations to Post, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    {title: @post.title, body: @post.body, user: @post.user_id}
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    {title: nil, body: nil, user_id: nil}
   }
 
   # This should return the minimal set of values that should be in the session

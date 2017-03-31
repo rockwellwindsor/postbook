@@ -3,13 +3,12 @@ require 'spec_helper'
 
 # This file is responsible for the tests testing the CRUD operations for the Post resource
 RSpec.describe Post, type: :model do
-
   # Create a post and user
   before do
     @user = User.new(id: rand(1..500), first_name: "New", last_name: "TestUser", email:"email@email.com", password: "password", password_confirmation: "password", confirmed_at: Time.now)
     @post = Post.new(id: rand(1..500), title: "Awesome post of the future", body: "In the future the big thing will be...", user_id: @user.id)
   end
-
+  # ROCKWELL_SUBMISSION_TEST
   subject {@post}
   it {should respond_to(:title)}
   it {should respond_to(:body)}
@@ -46,16 +45,16 @@ RSpec.describe Post, type: :model do
       let!(:newer_comment) do
         FactoryGirl.create(:comment, user: @user, post: @post, created_at: 1.hour.ago)
       end
-
-      it "should have the right comments in the right order" do
+      # ROCKWELL_SUBMISSION_TEST
+      it "hasthe right comments in the right order" do
         @post.comments.should == [older_comment, newer_comment]
       end
-
-      it "should have the right comments in the right order" do
+      # ROCKWELL_SUBMISSION_TEST
+      it "has the right comments in the right order / sanity check" do
         @post.comments.should_not == [newer_comment, older_comment]
       end
     end
-
+    # ROCKWELL_SUBMISSION_TEST
     it "has many comments" do
       comments = described_class.reflect_on_association(:comments)
       expect(comments.macro).to eq :has_many
