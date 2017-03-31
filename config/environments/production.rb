@@ -20,7 +20,7 @@ Rails.application.configure do
   end
 
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = { host:'postbook.io' }
+  config.action_mailer.default_url_options = { host:'https://rocky-tor-88366.herokuapp.com' }
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.default :charset => "utf-8"
@@ -28,7 +28,7 @@ Rails.application.configure do
     :from => 'rockwellwindsor@gmail.com',
     :user_name      => ENV['SENDGRID_USERNAME'],
     :password       => ENV['SENDGRID_PASSWORD'],
-    :domain => 'postbook.io',
+    :domain => 'https://rocky-tor-88366.herokuapp.com',
     :address => 'smtp.sendgrid.net',
     :port => 587,
     :authentication => :plain,
