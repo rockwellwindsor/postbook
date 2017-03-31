@@ -20,6 +20,10 @@
   .comment-body {
     color: $darkgrey;
     font-size: 1.5em;
-    padding: 0 50px; 
+    padding: 0 50px;
+    .comment-body-field-edit {
+      width: 95%;
+      padding: 10px;
+    }
   }
 }

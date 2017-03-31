@@ -36,11 +36,11 @@
             <p class="comment-author">
               <%= comment.user.first_name %> <%= comment.user.last_name %> says:
             </p>
-            <p class="comment-body">
+            <p id="comment-body-<%= comment.id %>" class="comment-body">
               <%= sanitize(comment.body) %>
             </p>
             <p class="comment-author-links">
-              <i class="fa fa-edit"></i> | 
+              <i class="fa fa-edit edit-comment-link" data-comment-id="<%= comment.id %>"></i> | 
               <%= link_to 'X', comment, data: { confirm: 'Are you sure?' }, 'data-comment-id' => comment.id, class: 'delete-comment' %>
             </p>
           </div>

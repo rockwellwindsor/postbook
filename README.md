@@ -98,6 +98,7 @@ Here I will discuss the objectives of the project and how I solved them.
   * faker - Create dummy data for posts
   * ckeditor - Writing better posts
   * font-awesome - Because it's awesome
+  * ill_paginate-bootstrap - Post pagination
 
 # TO-DO
 

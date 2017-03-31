@@ -1,6 +1,21 @@
-<h1>Editing Comment</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @comment %> |
-<%= link_to 'Back', comments_path %>
+<!-- Because these form are getting AJAXed in this form and the create form need to be different -->
+<%= form_for(@comment) do |f| %>
+  <% if @comment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
+      <ul>
+      <% @comment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.text_area :body, class: "comment-body-field-edit", placeholder: "Enter your comment here." %>
+  </div>
+<% end %>
+<div class="actions">
+  <button class="save-comment-edit-button" data-comment-id="<%= @comment.id %>">Save</button>
+  <button class="save-comment-edit-dismiss-button">Dismiss</button>
+  <div class="clearfix"></div>
+</div>

@@ -27,6 +27,7 @@ class CommentsController < ApplicationController
 
   # GET /comments/1/edit
   def edit
+    render layout: false
   end
 
   # POST /comments
@@ -53,6 +54,7 @@ class CommentsController < ApplicationController
       if @comment.update(comment_params)
         format.html { redirect_to @comment, notice: 'Comment was successfully updated.' }
         format.json { render :show, status: :ok, location: @comment }
+        format.js {head :ok}
       else
         format.html { render :edit }
         format.json { render json: @comment.errors, status: :unprocessable_entity }

@@ -54,6 +54,7 @@
     }
   }
   .comment-author-links {
+    padding: 0 0 0 50px;
     a {
       color: $black;
     }
@@ -61,10 +62,11 @@
       text-decoration: none !important;
       color: $blue;
     }
-    fa {
-      color: $black;      
+    .edit-comment-link {
+      cursor: pointer;
+      color: $black; 
     }
-    fa:hover {
+    .edit-comment-link:hover {
       text-decoration: none !important;
       color: $blue;
     }

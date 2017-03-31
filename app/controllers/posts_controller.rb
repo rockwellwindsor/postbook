@@ -7,6 +7,7 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
   before_action :add_breadcrumbs
   before_action :is_post_author?, only: [:edit, :update, :destroy]
+  
   # GET /posts
   # GET /posts.json
   def index

@@ -55,3 +55,30 @@
 .create-comment-button:hover {
   opacity: 0.5;
 }
+.save-comment-edit-button {
+  float:right;
+  width: 300px;
+  margin: 15px 45px 15px 15px;
+  padding: 10px 45px;
+  font-size:1em;
+  background: $black;
+  color: $white;
+  border: 1px solid $black;
+  cursor: pointer;
+}
+.save-comment-edit-button:hover {
+  opacity: 0.5;
+}
+.save-comment-edit-dismiss-button {
+  float:right;
+  margin: 15px 0;
+  padding: 10px 45px;
+  font-size:1em;
+  background: $blue;
+  color: $white;
+  border: 1px solid $blue;
+  cursor: pointer;  
+}
+.save-comment-edit-dismiss-button:hover {
+  opacity: 0.5;
+}
