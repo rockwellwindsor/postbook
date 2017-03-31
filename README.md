@@ -11,6 +11,10 @@ This readme will serve as a walk-through to my process of building this project 
     * Not sure if you guys use a git message template but you can see mine on my commit messages.
     * I use postgresql even in loca development so if you download and run make sure to move the pg gem into a production block and add splite3 and then change the database.yml file.
 
+  * Github:
+
+  * Herku: 
+
 ## Project Rubric
 
 Here I will discuss the objectives of the project and how I solved them.
@@ -88,7 +92,7 @@ Here I will discuss the objectives of the project and how I solved them.
   * faker - Create dummy data for posts
   * ckeditor - Writing better posts
   * font-awesome - Because it's awesome
-  * ill_paginate-bootstrap - Post pagination
+  * will_paginate-bootstrap - Post pagination
 
 # TO-DO
 

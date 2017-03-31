@@ -7,20 +7,18 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 # # Generate some fake users
-15.times_with_index do | index|
-  id = index
+35.times do
   first_name = Faker::Superhero.prefix
   last_name = Faker::Superhero.name
   email = "#{first_name}_the_great_#{id}@user.com"
   password = "password"
-  User.create!(id: id, first_name: first_name, last_name: last_name, email: email, password: password, password_confirmation: password, confirmed_at: Time.now)
+  User.create!(first_name: first_name, last_name: last_name, email: email, password: password, password_confirmation: password, confirmed_at: Time.now)
 end
 
 # Generate some fake posts
-50.times_with_index do |index|
-  id = index
+75.times do 
   title = Faker::Book.title
   body = Faker::ChuckNorris.fact
   user = User.find(1...15)
-  Post.create!(id: id, title: title, body: body, user_id: user.id)
+  Post.create!(title: title, body: body, user_id: user.id)
 end
