@@ -8,6 +8,7 @@ $(document).on('keyup','#comment_body', function() {
     $(".create-comment-button, .save-comment-edit-button").attr("disabled","disabled").addClass('disabled-btn');
   }
 });
+
 // This method submits the new comment data
 $(document).on('click', '.create-comment-button', function() {
   var post = $('.add-comment-button').attr('data-post-id');
@@ -22,6 +23,7 @@ $(document).on('click', '.create-comment-button', function() {
     }
   });
 });
+
 // This method handles deleting a comment
 $(document).on('click', '.delete-comment', function(e) {
   var comment = $(this).attr('data-comment-id');
@@ -36,11 +38,15 @@ $(document).on('click', '.delete-comment', function(e) {
     }
   });
 });
+
 // This method handles dismissing hte commetn edit field
 $(document).on('click','.save-comment-edit-dismiss-button', function() {
+  var comment =  $(this).attr('data-comment-id');
   $('.comment-edit-form-container').remove();
-  $('.comment-body').show();
+  $('.comment-body').show(); // Show the body that was hidden when edit was pressed
+  $('#author-links-for-' + comment).removeClass('hidden'); // Show edit / destroy links again
 });
+
 // This method handles loading in the comment edit form
 $(document).on('click', '.edit-comment-link', function() {
   var comment =  $(this).attr('data-comment-id');
@@ -50,9 +56,12 @@ $(document).on('click', '.edit-comment-link', function() {
   * Do not allow users to have a new comment and edit comment form open at same time
   */
   $('.new-comment-container').remove();
-  $('#comment-body-' + comment).hide();
+  $('.comment-edit-form-container').remove(); // Hide other edit boxes that may be open
+  $('#author-links-for-' + comment).addClass('hidden'); // Hide the author links
+  $('#comment-body-' + comment).hide(); // Hide the body that is there right now, reshow if dismiss button is hit
   $('#comment-edit-div-for-comment-' + comment).load('/comments/' + comment + '/edit');
 });
+
 // This method handles saving a new comment
 $(document).on('click', '.save-comment-edit-button', function(e) {
   var comment = $(this).attr('data-comment-id');

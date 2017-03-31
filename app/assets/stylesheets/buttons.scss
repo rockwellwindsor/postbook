@@ -34,16 +34,28 @@
   margin: 15px 0;
   padding: 10px 45px;
   font-size:1em;
-  background: $black;
+  background: $blue;
   color: $white;
-  border: 1px solid $black;
+  border: 1px solid $blue;
   cursor: pointer;
 }
 .add-comment-button:hover {
-  background: $white;
-  color: $black;
-  border: 1px solid $black;
   opacity: 0.5;
+}
+@media (max-width: 767px){
+  .add-comment-button {
+    width: 100%;
+    margin: 15px 0;
+    padding: 10px 45px;
+    font-size:1em;
+    background: $blue;
+    color: $white;
+    border: 1px solid $blue;
+    cursor: pointer;
+  }
+  .add-comment-button:hover {
+    opacity: 0.5;
+  }
 }
 .create-comment-button {
   float:right;
@@ -58,15 +70,30 @@
 .create-comment-button:hover {
   opacity: 0.5;
 }
+@media (max-width: 767px){
+  .create-comment-button {
+    width: 95%;
+    margin: 15px 0;
+    padding: 10px 45px;
+    font-size:1em;
+    background: $blue;
+    color: $white;
+    border: 1px solid $blue;
+    cursor: pointer;
+  }
+  .create-comment-button:hover {
+    opacity: 0.5;
+  }
+}
 .save-comment-edit-button {
   float:right;
   width: 300px;
   margin: 15px 45px 15px 15px;
   padding: 10px 45px;
   font-size:1em;
-  background: $black;
+  background: $blue;
   color: $white;
-  border: 1px solid $black;
+  border: 1px solid $blue;
   cursor: pointer;
 }
 .save-comment-edit-button:hover {
@@ -77,13 +104,42 @@
   margin: 15px 0;
   padding: 10px 45px;
   font-size:1em;
-  background: $blue;
+  background: $darkgrey;
   color: $white;
-  border: 1px solid $blue;
+  border: 1px solid $darkgrey;
   cursor: pointer;  
 }
 .save-comment-edit-dismiss-button:hover {
   opacity: 0.5;
+}
+@media (max-width: 767px){
+  .save-comment-edit-button {
+    width: 40%;
+    margin: 15px 25px 15px 25px;
+    padding: 10px 45px;
+    font-size:1em;
+    background: $blue;
+    color: $white;
+    border: 1px solid $blue;
+    cursor: pointer;
+  }
+  .save-comment-edit-button:hover {
+    opacity: 0.5;
+  }
+  .save-comment-edit-dismiss-button {
+    float:right;
+    width: 40%;
+    margin: 15px 0;
+    padding: 10px 45px;
+    font-size:1em;
+    background: $darkgrey;
+    color: $white;
+    border: 1px solid $darkgrey;
+    cursor: pointer;  
+  }
+  .save-comment-edit-dismiss-button:hover {
+    opacity: 0.5;
+  }
 }
 /* Keep at bottom */
 .disabled-btn {
