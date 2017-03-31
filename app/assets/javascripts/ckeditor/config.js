@@ -33,4 +33,3 @@ CKEDITOR.editorConfig = function(config) {
     return true;
      
 }
-}
