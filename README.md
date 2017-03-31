@@ -11,9 +11,7 @@ This readme will serve as a walk-through to my process of building this project 
     * Not sure if you guys use a git message template but you can see mine on my commit messages.
     * I use postgresql even in loca development so if you download and run make sure to move the pg gem into a production block and add splite3 and then change the database.yml file.
 
-  * Github:
-
-  * Herku: 
+  * Heroku: https://rocky-tor-88366.herokuapp.com
 
 ## Project Rubric
 
@@ -57,7 +55,7 @@ Here I will discuss the objectives of the project and how I solved them.
 
 * Upload to Github.
 
-  * URL is: 
+  * You're lokking at it. The Heroku URL is: https://rocky-tor-88366.herokuapp.com
 
 * Use latest version of Rails 4
 
@@ -73,7 +71,7 @@ Here I will discuss the objectives of the project and how I solved them.
 
 * One feature test (rspec/capybara)
 
-  * These tests can be found in spec/features/
+  * These tests can be found in spec/features/authentication_spec.rb
 
 * Use whatever gems required to get the job done
 
@@ -93,7 +91,3 @@ Here I will discuss the objectives of the project and how I solved them.
   * ckeditor - Writing better posts
   * font-awesome - Because it's awesome
   * will_paginate-bootstrap - Post pagination
-
-# TO-DO
-
-* filter all the pages you do not want users to see.
