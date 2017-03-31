@@ -9,7 +9,7 @@
   .form {
     width: 415px;
     padding: 0px 35px 35px 35px;
-    margin: 150px 0 35px 0;
+    margin: 175px 0 35px 0;
     background: $white;
     border: 1px solid rgba($grey, 0.65);
     border-radius: 2px;
@@ -376,7 +376,6 @@
         padding-top: 10px;
         margin-bottom: 5px;
         text-align: center;
-
         a.ghostbutton {
           padding: 15px 5px;
           margin: 0;
@@ -395,7 +394,6 @@
         }
       }
       .privgroup.group.form-group {
-
         select.form-control.input.email {
           border: 1px solid $blue!important;
         }
