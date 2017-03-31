@@ -69,11 +69,11 @@ group :development do
   gem 'web-console', '~> 2.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-  # Generate fake data for local testing
-  gem 'faker'
 end
 
 group :development, :production do
   # Using SendGrid for Emails
   gem 'sendgrid'
+  # Generate fake data for local testing
+  gem 'faker'
 end
