@@ -31,6 +31,34 @@
     }
   }
 }
+@media (max-width: 767px){
+  .nav-bar {
+    padding: 15px 25px 0 15px;
+    background: $white;
+    border-bottom: 1px solid $blue;
+    .logo {
+      width: 35px;
+      height: 35px;
+      margin-right: 25px;
+    }
+    .breadcrumbs {
+      width: 100%;
+      padding-bottom: 25px;
+      a {
+        font-size: 25px;
+        color: $black;
+      }
+      a:hover {
+        color: $blue;
+        text-decoration: none;
+      }
+      .auth-links {
+        float: right;
+        list-style: none;
+      }
+    }
+  }
+}
 #error_explanation {
   display: inline;
 }

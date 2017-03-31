@@ -72,6 +72,60 @@
     }
   }
 }
+@media (max-width: 767px){
+ .posts-show {
+    padding: 100px 15px;
+    .post-title {
+      text-align: center;
+      font-size: 4em;
+    }
+    .post-author {
+      text-align: center;
+      font-size: 2em
+    }
+    .post-date {
+      text-align: center;
+    }
+    .post-body {
+      font-size: 1.7em;
+    }
+    .post-author-links {
+      text-align: center;
+      a {
+        color: $black;
+      }
+      a:hover {
+        text-decoration: none !important;
+        color: $blue;
+      }
+      fa {
+        color: $black;      
+      }
+      fa:hover {
+        text-decoration: none !important;
+        color: $blue;
+      }
+    }
+    .comment-author-links {
+      padding: 0 0 0 50px;
+      a {
+        color: $black;
+      }
+      a:hover {
+        text-decoration: none !important;
+        color: $blue;
+      }
+      .edit-comment-link {
+        cursor: pointer;
+        color: $black; 
+      }
+      .edit-comment-link:hover {
+        text-decoration: none !important;
+        color: $blue;
+      }
+    }
+  }
+}
 .posts-index {
   padding: 100px 100px;
   .post-link {
@@ -87,5 +141,27 @@
     font-size: 2em
   }
   .post-date {
+  }
+}
+@media (max-width: 767px){
+  .posts-index {
+    padding: 100px 5px;
+    .post-link {
+      color: #000;
+    }
+    .post-title {
+      font-size: 3em;
+    }
+    .post-link:hover {
+      color: $blue;
+    }
+    .post-author {
+      font-size: 2em
+    }
+    .post-date {
+    }
+    .pagination {
+      padding-left: 7%;
+    }
   }
 }
