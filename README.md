@@ -37,8 +37,6 @@ Here I will discuss the objectives of the project and how I solved them.
 
 * The post index page serves as the site root page and shows all posts with title and author's name.
 
-  * 
-
 * Posts are ordered from new to old.
 
   * Set default scope for posts order in the model, post.rb.
@@ -103,4 +101,4 @@ Here I will discuss the objectives of the project and how I solved them.
 
 # TO-DO
 
-* If post/comment bleong to user then show edit icons
+* filter all the pages you do not want users to see.

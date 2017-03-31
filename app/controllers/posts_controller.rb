@@ -1,10 +1,12 @@
 # This class is responsible for the CRUD operations involved with a Post object
 class PostsController < ApplicationController
+  # This module supplies the is_post_author? method
+  include ApplicationHelper
 
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
   before_action :add_breadcrumbs
-
+  before_action :is_post_author?, only: [:edit, :update, :destroy]
   # GET /posts
   # GET /posts.json
   def index
