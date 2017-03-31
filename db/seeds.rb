@@ -8,9 +8,10 @@
 
 # # Generate some fake users
 35.times do
+  id = rand(1...350)
   first_name = Faker::Superhero.prefix
   last_name = Faker::Superhero.name
-  email = "#{first_name}_the_great@#{first_name}.com"
+  email = "#{first_name}_the_great#{id}@#{first_name}.com"
   password = "password"
   User.create!(first_name: first_name, last_name: last_name, email: email, password: password, password_confirmation: password, confirmed_at: Time.now)
 end
