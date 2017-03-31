@@ -10,22 +10,15 @@
 35.times do
   first_name = Faker::Superhero.prefix
   last_name = Faker::Superhero.name
-  email = "#{first_name}_the_great_#{id}@user.com"
+  email = "#{first_name}_the_great_@user.com"
   password = "password"
   User.create!(first_name: first_name, last_name: last_name, email: email, password: password, password_confirmation: password, confirmed_at: Time.now)
 end
 
 # Generate some fake posts
-15.times do 
+75.times do 
   title = Faker::Book.title
   body = Faker::ChuckNorris.fact
-  user = User.first
-  Post.create!(title: title, body: body, user_id: user.id)
-end
-
-15.times do 
-  title = Faker::Book.title
-  body = Faker::ChuckNorris.fact
-  user = User.last
+  user = User.find(1...35)
   Post.create!(title: title, body: body, user_id: user.id)
 end
