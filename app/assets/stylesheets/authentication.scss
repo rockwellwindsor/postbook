@@ -411,3 +411,13 @@
     }
   }
 }
+@media (max-width: 767px){
+  .sessions-new {
+    .form {
+      margin: 10px 0 0 0;
+      .notice {
+        padding-top:15px;
+      }
+    }
+  }
+}
