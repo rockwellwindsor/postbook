@@ -1,11 +1,6 @@
-/*
-*
-* This file is responsible for the styles found on the auth pages (any of the devise pages).
-* 
-*/
-
 @import '_colors';
 .registrations, .sessions, .passwords, .confirmations {
+  padding:25px;
   .title {
     line-height: 45px;
     text-align: center;
@@ -189,5 +184,13 @@
         border: 1px solid $blue!important;
       }
     }
+    .notice {
+      margin: 25px 0 0 10px;
+    }
+    .alert {
+      margin: 25px 0 0 10px;
+    }
   }
+}
+@media (max-width: 767px){
 }
