@@ -16,6 +16,22 @@
 .auth-button:focus {
   outline: none;
 }
+.cancel-auth-button {
+  width:100%;
+  margin: 15px 0;
+  padding: 20px 45px;
+  font-size:1em;
+  background: $black;
+  color: $white;
+  border: 1px solid $black;
+  cursor: pointer;  
+}
+.cancel-auth-button:hover {
+  opacity: 0.5;
+}
+.cancel-auth-button:focus {
+  outline: none;
+}
 .post-create-button {
   width: 100%;
   margin: 15px 0;
