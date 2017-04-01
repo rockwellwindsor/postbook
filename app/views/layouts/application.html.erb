@@ -12,7 +12,9 @@
     <%= csrf_meta_tags %>
   </head>
   <body class="<%= controller.controller_name %> <%= controller.controller_name %>-<%= controller.action_name %>">
+    <% if !devise_controller? %>
     <%= render 'layouts/navbar' %>
+    <% end %>
     <%= yield %>
   </body>
 </html>
