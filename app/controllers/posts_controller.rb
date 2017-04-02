@@ -5,13 +5,13 @@ class PostsController < ApplicationController
 
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
-  before_action :add_breadcrumbs
   before_action :is_post_author?, only: [:edit, :update, :destroy]
   before_action :set_s3_direct_post, only: [:new, :edit, :create, :update]
 
   # GET /posts
   # GET /posts.json
   def index
+    add_breadcrumb "New Post", new_post_path
     @posts = Post.paginate(page: params[:page], :per_page => 10)
     @user = current_user
   end
@@ -19,10 +19,12 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    add_breadcrumb "Home", :root_path
   end
 
   # GET /posts/new
   def new
+    add_breadcrumb "Home", :root_path
     @post = Post.new
   end
 
