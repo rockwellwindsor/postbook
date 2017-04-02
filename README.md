@@ -98,7 +98,7 @@ Here I will discuss the objectives of the project and how I solved them.
 
 ## Summary
 
-Hope you guys enjoy the interesting posts, look forward to talking again.
+Hope you guys enjoy the interesting posts, look forward to talking more.  You can reach me by my eamil anytime or by phone between 10am and 3pm central time.
 
 Thanks,<br/>
 Rockwell Windsor Rice
