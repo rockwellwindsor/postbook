@@ -3,10 +3,10 @@ CKEDITOR.editorConfig = function(config) {
     // config.width = '700';
     config.height = '350';
     config.filebrowserBrowseUrl = "/ckeditor/attachment_files";
-    config.filebrowserImageBrowseLinkUrl = "/ckeditor/pictures";
-    config.filebrowserImageBrowseUrl = "/ckeditor/pictures";
-    config.filebrowserImageUploadUrl = "/ckeditor/pictures";
-    config.filebrowserUploadUrl = "/ckeditor/attachment_files";
+    config.filebrowserImageBrowseLinkUrl = "https://s3-us-west-2.amazonaws.com/windsordesignstudio/postbook/";
+    config.filebrowserImageBrowseUrl = "https://s3-us-west-2.amazonaws.com/windsordesignstudio/postbook/";
+    config.filebrowserImageUploadUrl = "https://s3-us-west-2.amazonaws.com/windsordesignstudio/postbook/";
+    config.filebrowserUploadUrl = "https://s3-us-west-2.amazonaws.com/windsordesignstudio/postbook/";
     config.extraPlugins = 'insertpre';
     config.toolbar = 'Pure';
     config.allowedContent = true;
@@ -30,7 +30,5 @@ CKEDITOR.editorConfig = function(config) {
         { name: 'tools', items : [ 'Maximize', 'ShowBlocks','-','About' ] }
     ];
 
-  
-    return true;
-     
+    return true;   
 }
