@@ -102,3 +102,7 @@ Hope you guys enjoy the interesting posts, look forward to talking more.  You ca
 
 Thanks,<br/>
 Rockwell Windsor Rice
+
+## TO-DO
+* Loader animation on comment create
+* User edit profile

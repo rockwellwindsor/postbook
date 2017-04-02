@@ -6,20 +6,22 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-# # Generate some fake users
+# Generate some fake users
+# int = 1
 # 35.times do
-#   id = rand(1...350)
+#   id = int
 #   first_name = Faker::Superhero.prefix
 #   last_name = Faker::Superhero.name
 #   email = "#{first_name}_the_great#{id}@#{first_name}.com"
 #   password = "password"
-#   User.create!(first_name: first_name, last_name: last_name, email: email, password: password, password_confirmation: password, confirmed_at: Time.now)
+#   User.create!(id: = id, first_name: first_name, last_name: last_name, email: email, password: password, password_confirmation: password, confirmed_at: Time.now)
+#   int += 1
 # end
 
 # Generate some fake posts
 # 75.times do 
 #   title = Faker::Book.title
 #   body = Faker::ChuckNorris.fact
-#   user = rand(1...35)
+#   user = rand(44...78)
 #   Post.create!(title: title, body: body, user_id: user)
 # end
