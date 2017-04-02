@@ -39,6 +39,7 @@ gem 'bootstrap-sass'
 gem 'devise'
 # Editor
 gem 'ckeditor', '4.1.3'
+# 4/2 - I think I want to develop this a little further to be a useful template so I am putting paperclip in to handle image uploads.
 gem 'paperclip'
 # Breadcrumb navigation
 gem "breadcrumbs_on_rails"

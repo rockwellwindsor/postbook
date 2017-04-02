@@ -1,4 +1,4 @@
-supportinclude ApplicationHelper
+include ApplicationHelper
 
 RSpec::Matchers.define :have_error_message do |message|
   match do |page|

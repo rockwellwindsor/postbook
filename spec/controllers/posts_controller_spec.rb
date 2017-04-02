@@ -19,7 +19,6 @@ require 'rails_helper'
 # that an instance is receiving a specific message.
 
 RSpec.describe PostsController, type: :controller do
-
   # Create a post and user
   before do
     @user = FactoryGirl.create(:user)
@@ -31,7 +30,7 @@ RSpec.describe PostsController, type: :controller do
   # Post. As you add validations to Post, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    {title: @post.title, body: @post.body, user: @post.user_id}
+    {title: @post.title, body: @post.body, user_id: @user.id}
   }
 
   let(:invalid_attributes) {
@@ -41,11 +40,11 @@ RSpec.describe PostsController, type: :controller do
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
   # PostsController. Be sure to keep this updated too.
-  let(:valid_session) { {} }
+  let(:valid_session) { sign_in(@user) }
 
   describe "GET #index" do
-    it "assigns all posts as @posts" do
-      post = Post.create! valid_attributes
+    it "assigns all posts as @post" do
+      post = FactoryGirl.create(:post)
       get :index, params: {}, session: valid_session
       expect(assigns(:posts)).to eq([post])
     end
@@ -53,9 +52,9 @@ RSpec.describe PostsController, type: :controller do
 
   describe "GET #show" do
     it "assigns the requested post as @post" do
-      post = Post.create! valid_attributes
-      get :show, params: {id: post.to_param}, session: valid_session
-      expect(assigns(:post)).to eq(post)
+      @post = FactoryGirl.create(:post)
+      get "/post/#{@post.id}"
+
     end
   end
 
@@ -68,8 +67,8 @@ RSpec.describe PostsController, type: :controller do
 
   describe "GET #edit" do
     it "assigns the requested post as @post" do
-      post = Post.create! valid_attributes
-      get :edit, params: {id: post.to_param}, session: valid_session
+      post = @post
+      get :edit, params: {id: post.to_param}
       expect(assigns(:post)).to eq(post)
     end
   end
@@ -77,18 +76,20 @@ RSpec.describe PostsController, type: :controller do
   describe "POST #create" do
     context "with valid params" do
       it "creates a new Post" do
+        sign_in(@user)
         expect {
-          post :create, params: {post: valid_attributes}, session: valid_session
+          post :create, params: {post: valid_attributes}
         }.to change(Post, :count).by(1)
       end
 
       it "assigns a newly created post as @post" do
-        post :create, params: {post: valid_attributes}, session: valid_session
+        post = FactoryGirl.create(:post)
         expect(assigns(:post)).to be_a(Post)
         expect(assigns(:post)).to be_persisted
       end
 
       it "redirects to the created post" do
+        sign_in(@user)
         post :create, params: {post: valid_attributes}, session: valid_session
         expect(response).to redirect_to(Post.last)
       end
@@ -157,8 +158,7 @@ RSpec.describe PostsController, type: :controller do
     end
 
     it "redirects to the posts list" do
-      post = Post.create! valid_attributes
-      delete :destroy, params: {id: post.to_param}, session: valid_session
+      delete :destroy, params: {id: @post.id}, session: valid_session
       expect(response).to redirect_to(posts_url)
     end
   end

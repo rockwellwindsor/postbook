@@ -1,5 +1,4 @@
 require "rails_helper"
-require 'spec_helper'
 
 describe "authentication process" do
 
@@ -36,6 +35,26 @@ describe "authentication process" do
       log_in_as(user)
       visit(new_post_path)
       expect(current_path).to eq(new_post_path)
+    end
+  end
+  describe "comments authentication" do
+    # ROCKWELL_SUBMISSION_TEST
+    it "does not show a user who is not logged in the add comment button" do
+      @post = FactoryGirl.create(:post)
+      visit(post_path(@post))
+      expect(current_path).to eq(post_path(@post))
+      expect(page).to_not have_css(".go-to-comment-div")
+    end
+    # ROCKWELL_SUBMISSION_TEST
+    it "does show a user who is logged in the add comment button" do
+      @post = FactoryGirl.create(:post)
+      user = FactoryGirl.create(:user)
+      user.confirmed_at = Time.now
+      user.save
+      log_in_as(user)
+      visit(post_path(@post))
+      expect(current_path).to eq(post_path(@post))
+      expect(page).to have_css(".go-to-comment-div")
     end
   end
 end
