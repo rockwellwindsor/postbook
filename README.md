@@ -6,14 +6,17 @@ This readme will serve as a walk-through to my process of building this project 
 
   Build an application based on the rubric provided.  There should be posts that can have comments and users that have to be authenticated before creating posts or comments.  
 
-  * A few points to look for
+  * A few points to know
+
     * I pushed to git from the very beginning of this application so you could get a sense of my git patterns.  Probably a little overkill but I tend to do small pushes more often instead of large pushes less often.
 
     * Not sure if you guys use a git message template but you can see mine on my commit messages.
 
     * I use postgresql even in local development so if you download and run make sure to move the pg gem into a production block and add splite3 and then change the database.yml file (unless you use pg locally as well).
 
-    * There is some dummy data up on Heroku so feel free to create posts, try to break whatever you can, etc.  
+    * There is some dummy data up on Heroku so feel free to create posts, try to break whatever you can, etc.
+
+    * Image uploading in the editor is not set up.  I think I may develop this further into a template so I wanted to start working, which is why you will see aws-sdk gem and paperclip gem in the gem file. 
 
   * Heroku: https://rocky-tor-88366.herokuapp.com
 
@@ -103,5 +106,3 @@ Hope you guys enjoy the interesting posts, look forward to talking more.  You ca
 Thanks,<br/>
 Rockwell Windsor Rice
 
-## TO-DO
-* Loader animation on comment create
