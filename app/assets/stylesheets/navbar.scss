@@ -1,0 +1,175 @@
+@import '_colors';
+
+.nav-bar {    
+  .breadcrumbs {
+    .dropdown {
+      float: right;
+
+      .notnum {
+        height: 20px;
+        min-width: 20px;
+        padding: 3px;
+        background: #e74c3c;
+        border: 2px solid $white;
+        border-radius: 50%;
+        color: $white;
+        font-size: 1.2em;
+        font-weight: 400;
+        text-align: center;
+        position: absolute;
+        top: 16px;
+        right: 20px;
+        z-index: 10;
+      }
+      button {
+        height: 65px;
+        padding: 0 25px;
+        border: none;
+        background: transparent;
+        outline: none;
+
+        i {
+          color: $greyblue;
+          font-size: 3.2em;
+          opacity: 0.45;
+          transition: ease all 0.2s;
+        }
+        .arrow {
+          position: relative;
+          top: 6px;
+        }
+        .circle {
+          width: 50px;
+          height: 50px;
+          padding-top: 5px;
+          border: 2px solid rgba($greyblue, 0.45);
+          border-radius: 50%;
+          text-align: center;
+          transition: ease all 0.2s;
+
+          i {
+            font-size: 2.5em;
+          }
+        }
+        &:hover {
+
+          i {
+            opacity: 0.85;
+            transition: ease all 0.2s;
+          }
+          .circle {
+            border: 2px solid rgba($greyblue, 0.85);
+            transition: ease all 0.2s;
+          }
+        }
+      }
+      ul.dropdown-menu {
+        max-height: 300px;
+        padding: 0;
+        padding-bottom: 5px;
+        background: lighten($lightgrey, 2%);
+
+        .title {
+          width: 100%;
+          padding: 10px;
+          margin-bottom: 10px;
+          background: $white;
+          border-bottom: 1px solid $grey;
+          border-radius: 4px 4px 0 0;
+          color: rgba($darknavy, 0.85);
+          font-size: 1.25em;
+          letter-spacing: 0.04em;
+        }
+        li.dropdown-item {
+          min-width: 215px;
+          margin: 5px 10px;
+          display: flex;
+          flex-direction: row;
+          flex-wrap: nowrap;
+          flex-flow: center;
+          justify-content: space-between;
+          align-items: stretch;
+          align-content: center;
+          opacity: 1;
+          transition: ease all 0.2s;
+
+          .icon {
+            display: inline-block;
+            border-right: 1px solid $grey;
+            border-radius: 4px 0 0 4px;
+
+            i {
+              padding: 10px;
+              color: $white;
+              font-size: 1.5em;
+            }
+          }
+          .icon.blue {
+            background: $blue;
+          }
+          .icon.green {
+            background: $lightgreen;
+          }
+          .info {
+            width: 100%;
+            padding: 8px;
+            background: $white;
+            border-radius: 0 4px 4px 0;
+
+            .type {
+              display: inline-block;
+              width: 100%;
+              color: $darknavy;
+              font-size: 1em;
+              font-weight: 400;
+            }
+            .description {
+              margin-top: 5px;
+              display: inline-block;
+              width: 100%;
+              color: $greyblue;
+              font-size: 0.8em;
+            }
+          }
+          &:hover {
+            opacity: 0.8;
+            cursor: pointer;
+            transition: ease all 0.2s;
+          }
+        }
+        li.normal {
+          opacity: 1;
+          transition: ease all 0.2s;
+
+          i {
+            padding-right: 15px;
+          }
+          &:hover {
+            opacity: 0.65;
+            transition: ease all 0.2s;
+          }
+        }
+        &:before, &:after {
+          content: "";
+          width: 0;
+          height: 0;
+          position: absolute;
+        }
+        &:before {
+          top: -12px;
+          right: 32px;
+          border-left: 12px solid transparent;
+          border-right: 12px solid transparent;
+          border-bottom: 12px solid $grey;
+        }
+        &:after {
+          top: -10px;
+          right: 34px;
+          border-left: 10px solid transparent;
+          border-right: 10px solid transparent;
+          border-bottom: 10px solid $white;
+        }
+      }
+    }
+  }
+}
