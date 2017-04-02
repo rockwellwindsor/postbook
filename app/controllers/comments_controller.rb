@@ -5,14 +5,12 @@ class CommentsController < ApplicationController
 
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:index, :new, :edit, :create, :update, :destroy]
-  before_action :add_breadcrumbs
   before_action :is_comment_author?, only: [:edit, :update, :destroy]
 
   # GET /comments
   # GET /comments.json
   def index
     redirect_to root_path
-    @comments = Comment.all
   end
 
   # GET /comments/1
