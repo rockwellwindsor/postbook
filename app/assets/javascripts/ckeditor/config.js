@@ -10,6 +10,7 @@ CKEDITOR.editorConfig = function(config) {
     config.extraPlugins = 'insertpre';
     config.toolbar = 'Pure';
     config.allowedContent = true;
+    config.imageUploadUrl = "https://s3-us-west-2.amazonaws.com/windsordesignstudio/postbook/"
 
     config.toolbar_Pure = [
         { name: 'document', items : [ 'Source','-','Save','NewPage','DocProps','Preview','Print','-','Templates' ] },
@@ -22,7 +23,7 @@ CKEDITOR.editorConfig = function(config) {
         { name: 'paragraph', items : [ 'NumberedList','BulletedList','-','Outdent','Indent','-','Blockquote','CreateDiv',
         '-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock','-','BidiLtr','BidiRtl' ] },
         { name: 'links', items : [ 'Link','Unlink','Anchor', 'InsertPre' ] },
-        { name: 'insert', items : [ 'Image','Flash','Table','HorizontalRule','Smiley','SpecialChar','PageBreak','Iframe' ] },
+        { name: 'insert', items : [ 'Image','Table','HorizontalRule','Smiley','SpecialChar','PageBreak','Iframe' ] },
         '/',
         { name: 'styles', items : [ 'Styles','Format','Font','FontSize','insertpre' ] },
         { name: 'colors', items : [ 'TextColor','BGColor' ] },
