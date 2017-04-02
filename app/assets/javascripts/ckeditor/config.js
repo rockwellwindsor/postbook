@@ -10,7 +10,6 @@ CKEDITOR.editorConfig = function(config) {
     config.extraPlugins = 'insertpre';
     config.toolbar = 'Pure';
     config.allowedContent = true;
-    config.imageUploadUrl = "https://s3-us-west-2.amazonaws.com/windsordesignstudio/postbook/"
 
     config.toolbar_Pure = [
         { name: 'document', items : [ 'Source','-','Save','NewPage','DocProps','Preview','Print','-','Templates' ] },

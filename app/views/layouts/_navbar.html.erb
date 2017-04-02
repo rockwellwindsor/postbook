@@ -2,22 +2,19 @@
   <div class="breadcrumbs">
     <img class="logo" src="/favicon.png" />
     <%= render_breadcrumbs %>
+    <% if user_signed_in? %>
     <div class="dropdown">
-      <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+      <button class="btn btn-primary dropdown-button dropdown-toggle" type="button" data-toggle="dropdown">Links
       <span class="caret"></span></button>
       <ul class="dropdown-menu">
-        <li><a href="#">HTML</a></li>
-        <li><a href="#">CSS</a></li>
-        <li><a href="#">JavaScript</a></li>
+        <li><%= link_to "Change your password", edit_user_registration_path %></li>
+        <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
       </ul>
     </div>
-    <ul class="auth-links">
-    <% if user_signed_in? %>
-      <li><%= link_to "Change your password", edit_user_registration_path %></li>
-      <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
     <% else %>
+    <ul class="auth-links">
       <li><%= link_to('Login', new_user_session_path)  %></li>
-    <% end %>
     </ul>
+    <% end %>
   </div>
 </nav>
