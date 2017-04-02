@@ -10,5 +10,11 @@ RSpec.describe "Comments", type: :request do
       get comments_path
       expect(response).to have_http_status(302)
     end
+    # ROCKWELL_SUBMISSION_TEST
+    it "does not show comment show page if someone tries to view it" do
+      comment = FactoryGirl.create(:comment)
+      get comment_path(comment)
+      expect(response).to have_http_status(302)
+    end
   end
 end
