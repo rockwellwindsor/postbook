@@ -11,6 +11,7 @@ $(document).on('keyup','#comment_body', function() {
 
 // This method submits the new comment data
 $(document).on('click', '.create-comment-button', function() {
+  $('.loadstack').css('display','');
   var post = $('.add-comment-button').attr('data-post-id');
   var body = document.getElementById("comment_body").value
   $.ajax({
@@ -26,6 +27,7 @@ $(document).on('click', '.create-comment-button', function() {
 
 // This method handles deleting a comment
 $(document).on('click', '.delete-comment', function(e) {
+  $('.loadstack').css('display','');
   var comment = $(this).attr('data-comment-id');
   e.preventDefault();
   $.ajax({
@@ -34,6 +36,7 @@ $(document).on('click', '.delete-comment', function(e) {
     dataType: 'JSON',
     data: {comment : comment},
     success: function(data) {
+      $('.loadstack').css('display','none');
       $('#comment-'+ comment).fadeOut("slow");
     }
   });
@@ -49,6 +52,7 @@ $(document).on('click','.save-comment-edit-dismiss-button', function() {
 
 // This method handles loading in the comment edit form
 $(document).on('click', '.edit-comment-link', function() {
+  $('.loadstack').css('display','');
   var comment =  $(this).attr('data-comment-id');
   var post =  $(this).attr('data-post-id');
   /* 
@@ -59,11 +63,12 @@ $(document).on('click', '.edit-comment-link', function() {
   $('.comment-edit-form-container').remove(); // Hide other edit boxes that may be open
   $('#author-links-for-' + comment).addClass('hidden'); // Hide the author links
   $('#comment-body-' + comment).hide(); // Hide the body that is there right now, reshow if dismiss button is hit
-  $('#comment-edit-div-for-comment-' + comment).load('/comments/' + comment + '/edit');
+  $('#comment-edit-div-for-comment-' + comment).load('/comments/' + comment + '/edit', function() { setTimeout(function(){ $('.loadstack').css('display','none'); }, 1000) });
 });
 
 // This method handles saving a new comment
 $(document).on('click', '.save-comment-edit-button', function(e) {
+  $('.loadstack').css('display','');
   var comment = $(this).attr('data-comment-id');
   var body = document.getElementById("comment_body").value
   e.preventDefault();

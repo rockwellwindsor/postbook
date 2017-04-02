@@ -1,64 +1,5 @@
-/*
-*
-* This file is responsible for the styles found on site wide elements.
-* 
-*/
 @import '_colors';
 
-.nav-bar {
-  padding: 15px 50px 0 50px;
-  background: $white;
-  border-bottom: 1px solid $blue;
-  .logo {
-    width: 35px;
-    height: 35px;
-    margin-right: 25px;
-  }
-  .breadcrumbs {
-    width: 100%;
-    padding-bottom: 25px;
-    a {
-      font-size: 25px;
-      color: $black;
-    }
-    a:hover {
-      color: $blue;
-      text-decoration: none;
-    }
-    .auth-links {
-      float: right;
-      list-style: none;
-    }
-  }
-}
-@media (max-width: 767px){
-  .nav-bar {
-    padding: 15px 25px 0 15px;
-    background: $white;
-    border-bottom: 1px solid $blue;
-    .logo {
-      width: 35px;
-      height: 35px;
-      margin-right: 25px;
-    }
-    .breadcrumbs {
-      width: 100%;
-      padding-bottom: 25px;
-      a {
-        font-size: 25px;
-        color: $black;
-      }
-      a:hover {
-        color: $blue;
-        text-decoration: none;
-      }
-      .auth-links {
-        float: right;
-        list-style: none;
-      }
-    }
-  }
-}
 #error_explanation {
   display: inline;
 }
@@ -67,3 +8,70 @@
   color: $darkgrey;
   font-size: 1.5em;
 }
+/* PRE LOADER */
+.loadstack {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #1f1f1f;
+  z-index: 99996;
+  height: 100%;
+  width: 100%;
+  overflow: hidden !important;
+}
+
+.spinner {
+  background-color: $blue;
+  opacity: 1;
+  border: 5px solid $darkgrey;
+  width: 100px;
+  height: 100px;
+  margin: 100px auto;
+  border-radius: 100%;  
+  top: 50%;
+  position: absolute;
+  left: 50%;
+  margin-left: -50px;
+  margin-top: -50px;
+  -webkit-animation:scaleout 1.0s infinite ease-in-out;
+  -moz-animation:scaleout 1.0s infinite ease-in-out;
+  -ms-animation:scaleout 1.0s infinite ease-in-out;
+  -o-animation:scaleout 1.0s infinite ease-in-out;
+  animation:scaleout 1.0s infinite ease-in-out;
+}
+
+
+@-webkit-keyframes scaleout {
+  0% {-webkit-transform: scale(0.0);}
+  100% {opacity: 0;-webkit-transform: scale(1.0);}
+}
+
+@-moz-keyframes scaleout {
+  0% {-moz-transform: scale(0.0);}
+  100% {opacity: 0;-moz-transform: scale(1.0);}
+}
+
+@-ms-keyframes scaleout {
+  0% {-ms-transform: scale(0.0);}
+  100% {opacity: 0;-ms-transform: scale(1.0);}
+}
+
+@-o-keyframes scaleout {
+  0% {-o-transform: scale(0.0);}
+  100% {opacity: 0;-o-transform: scale(1.0);}
+}
+
+@keyframes scaleout {
+  0% {transform: scale(0.0);}
+  100% {opacity: 0;transform: scale(1.0);}
+}
+
+/* Fixes IE 10 viewport issue, as specified in Bootstrap docs.
+ * See here > http://getbootstrap.com/getting-started/#support-ie-compatibility-modes. */
+@-webkit-viewport   { width: device-width; }
+@-moz-viewport      { width: device-width; }
+@-ms-viewport       { width: device-width; }
+@-o-viewport        { width: device-width; }
+@viewport

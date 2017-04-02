@@ -105,4 +105,3 @@ Rockwell Windsor Rice
 
 ## TO-DO
 * Loader animation on comment create
-* User edit profile
