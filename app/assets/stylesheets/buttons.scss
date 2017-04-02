@@ -18,9 +18,9 @@
 }
 .dropdown-button {
   font-size:1em;
-  background: $blue;
+  background: $blue !important;
   color: $white;
-  border: 1px solid $blue;
+  border: 1px solid $blue !important;
   float: right;  
 }
 .cancel-auth-button {
